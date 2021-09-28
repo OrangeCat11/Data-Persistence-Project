@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -9,8 +10,11 @@ using UnityEditor;
 public class MenuToStart : MonoBehaviour
 {
 
+    [SerializeField] InputField nameField;
+
     public void NextScene()
     {
+        Name.Instance.ReadStringInput(nameField.text);
         SceneManager.LoadScene(1);
     }
 
